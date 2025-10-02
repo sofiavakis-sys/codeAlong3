@@ -1,13 +1,16 @@
 package codeAlong3;
 
-public class IPhone {
+public class IPhone extends Device implements Playable {
 
   private int batteryLife;
-  public IPhone(){
+  public IPhone() {
+    //super() invokes the constructor
+    super("IPhone");
     this.batteryLife = 100;
   }
 
-  public void playIPhone(String songName){
+  @Override
+  public void play(String songName){
     this.searchOnSpotify();
     System.out.println("Playing " + songName + " from IPhone!");
     this.batteryLife--;
@@ -16,14 +19,6 @@ public class IPhone {
 
   private void searchOnSpotify(){
     System.out.println("Searching on Spotify...");
-  }
-
-  public void plugIn(){
-    System.out.println("IPhone has been plugged in");
-  }
-
-  public void turnOn(){
-    System.out.println("IPhone has been turned on");
   }
 
 }

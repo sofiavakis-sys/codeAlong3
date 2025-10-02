@@ -1,10 +1,13 @@
 package codeAlong3;
 
-public class CDPlayer {
+public class CDPlayer extends Device implements Playable{
 
-  public CDPlayer(){}
+  public CDPlayer(){
+    super("CDPlayer");
+  }
 
-  public void playCDPlayer(String songName){
+  @Override
+  public void play(String songName){
     this.wipeCD(songName);
     System.out.println("Playing " + songName + " from CDPlayer!");
   }
@@ -13,11 +16,4 @@ public class CDPlayer {
     System.out.println("Wiping the CD for " + songName);
   }
 
-  public void plugIn(){
-    System.out.println("CDPlayer has been plugged in");
-  }
-
-  public void turnOn(){
-    System.out.println("CDPlayer has been turned on");
-  }
 }
